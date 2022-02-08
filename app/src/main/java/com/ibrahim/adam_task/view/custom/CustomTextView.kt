@@ -36,7 +36,7 @@ class CustomTextView : LinearLayout {
             invalidateTextPaintAndMeasurements()
         }
 
-    var textDimension = 16f
+    var textDimension = 14f
         set(value) {
             field = value
             invalidateTextPaintAndMeasurements()

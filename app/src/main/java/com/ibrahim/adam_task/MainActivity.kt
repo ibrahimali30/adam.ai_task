@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.DividerItemDecoration
 
 import androidx.core.content.ContextCompat
 import com.google.android.material.tabs.TabLayoutMediator
+import com.ibrahim.adam_task.adapter.Adapter
+import com.ibrahim.adam_task.adapter.ViewPagerAdapter
+import com.ibrahim.adam_task.data.Item
 import kotlinx.android.synthetic.main.item.view.*
 
 
@@ -23,14 +26,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         initRecyclerView()
-//        initTabLayoutView()
+        initTabLayoutView()
     }
 
     private fun initTabLayoutView() {
-        viewPager.adapter = Adapter(listOf<Item>(
-            Item(R.drawable.ic_6,"Attendees",14,"#3380BEF2"),
-            Item(R.drawable.ic_3,"Agenda",10,"#33FFB434")
-        ))
+        viewPager.adapter = ViewPagerAdapter(listOf("",""))
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             when (position) {
                 0 -> {
@@ -64,37 +64,4 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
-}
-
-data class Item(
-    val iconRes: Int,
-    val title: String,
-    val count: Int,
-    val hexaColor: String
-)
-class Adapter(val itemsList: List<Item>): RecyclerView.Adapter<Adapter.ItemViewHolder>() {
-
-
-    class ItemViewHolder(val view: View): RecyclerView.ViewHolder(view) {
-        fun bind(item: Item) {
-            view.itemContainer.setBackgroundColor(Color.parseColor(item.hexaColor))
-            view.ivIcon.setImageResource(item.iconRes)
-            view.tvTitle.text = item.title
-            view.tvCount.text = "(${item.count})"
-        }
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        return  ItemViewHolder(
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.item, parent, false)
-        )
-    }
-
-    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.bind(itemsList[position])
-    }
-
-    override fun getItemCount(): Int = itemsList.size
-
 }

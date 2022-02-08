@@ -65,7 +65,7 @@
 
                     <com.ibrahim.adam_task.view.custom.CustomTextView
                         android:id="@+id/customTextView"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:drawableMargin="12dp"
@@ -78,8 +78,8 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/radius_yellow"
                         android:paddingHorizontal="8dp"
-                        android:paddingVertical="2dp"
                         android:text="Scheduled"
+                        android:fontFamily="@font/inter_400"
                         android:textColor="#FFB434"
                         android:textSize="14sp"
                         app:backgroundTint="#FFF3BF" />
@@ -126,7 +126,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="18dp">
+                    android:layout_marginTop="20dp">
 
                     <ImageView
                         android:id="@+id/ivProfile"
@@ -174,12 +174,11 @@
                     android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="16dp"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="2"
                     tools:itemCount="6"
-                    tools:layout_marginHorizontal="16dp"
                     tools:listitem="@layout/item" />
 
                 <com.google.android.material.tabs.TabLayout
@@ -187,7 +186,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/tab_bg"
                     app:tabIndicator="@drawable/tab_indicator"
                     app:tabIndicatorColor="#ffffff"
@@ -209,6 +208,11 @@
                     android:id="@+id/viewPager"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+
+                <include
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    layout="@layout/item_view_pager"/>
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

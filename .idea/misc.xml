@@ -5,9 +5,17 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.32407407407407407" />
         <entry key="app/src/main/res/drawable/divider.xml" value="0.2490740740740741" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.17040606526533603" />
-        <entry key="app/src/main/res/layout/item.xml" value="0.20467814475791454" />
-        <entry key="app/src/main/res/layout/sample_custom_text_view.xml" value="0.40106951871657753" />
+        <entry key="app/src/main/res/drawable/ic_marker.xml" value="0.2388888888888889" />
+        <entry key="app/src/main/res/drawable/ic_microsoft_team.xml" value="0.340625" />
+        <entry key="app/src/main/res/drawable/radius_red.xml" value="0.2388888888888889" />
+        <entry key="app/src/main/res/drawable/radius_yellow.xml" value="0.19375" />
+        <entry key="app/src/main/res/drawable/tab_bg.xml" value="0.2388888888888889" />
+        <entry key="app/src/main/res/drawable/tab_indicator.xml" value="0.2388888888888889" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3600852272727273" />
+        <entry key="app/src/main/res/layout/item.xml" value="1.4989680555961764" />
+        <entry key="app/src/main/res/layout/item_view_pager.xml" value="0.4602593013820411" />
+        <entry key="app/src/main/res/layout/layout_custom_item.xml" value="0.3194871794871795" />
+        <entry key="app/src/main/res/layout/sample_custom_text_view.xml" value="0.55" />
       </map>
     </option>
   </component>

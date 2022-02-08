@@ -15,6 +15,7 @@
        android:layout_gravity="center"
        tools:text="Client Campaign"
        android:fontFamily="@font/inter_400"
+       android:textSize="14sp"
        android:textColor="#212529"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"/>
