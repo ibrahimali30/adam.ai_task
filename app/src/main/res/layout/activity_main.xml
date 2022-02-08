@@ -15,12 +15,14 @@
         <LinearLayout
             app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/linearLayout"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:src="@drawable/ic_back" />
 
             <TextView
@@ -29,6 +31,7 @@
                 android:text="Client Brainstorming Meeting "
                 android:fontFamily="@font/inter_font"
                 android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="4dp"
                 android:layout_weight=".1"
                 android:textStyle="bold"
                 android:textSize="20sp" />
@@ -36,7 +39,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginTop="12dp"
                 android:src="@drawable/ic_more" />
 
         </LinearLayout>
@@ -52,14 +55,69 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.ibrahim.adam_task.view.custom.CustomTextView
-                    android:id="@+id/customTextView"
+                <LinearLayout
+                    android:layout_marginStart="24dp"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.ibrahim.adam_task.view.custom.CustomTextView
+                        android:id="@+id/customTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:drawableMargin="12dp"
+                        app:textDimension="14dp"
+                        android:layout_weight="1"
+                        app:textDrawable="@drawable/ic_bage"
+                        app:textString="Hello, CustomTextView" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scheduled"
+                        android:textSize="14sp"
+                        android:paddingHorizontal="8dp"
+                        android:layout_marginEnd="32dp"
+                        android:paddingVertical="2dp"
+                        app:backgroundTint="#FFF3BF"
+                        android:background="@drawable/radius_yellow"
+                        android:textColor="#FFB434"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.ibrahim.adam_task.view.custom.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:drawableMargin="12dp"
+                        app:textDimension="14dp"
+                        app:textDrawable="@drawable/ic_calender"
+                        app:textString="24 Apr 2021" />
+
+                    <com.ibrahim.adam_task.view.custom.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        app:drawableMargin="12dp"
+                        app:textDimension="14dp"
+                        app:textDrawable="@drawable/ic_clock"
+                        app:textString="11:00 AM - 1:00 PM (2 hrs)" />
+
+                </LinearLayout>
+
+                <com.ibrahim.adam_task.view.custom.CustomTextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
                     app:drawableMargin="12dp"
                     app:textDimension="14dp"
-                    app:textDrawable="@drawable/ic_bage"
-                    app:textString="Hello, CustomTextView" />
+                    app:textDrawable="@drawable/ic_marker"
+                    app:textString="Headquarters, Building C, Room 224" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
