@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -81,6 +82,8 @@ class CustomTextView : LinearLayout {
         }
 
         a.recycle()
+
+        Log.d("TAG", "init: $textDimension $textColor $textString $textDrawable")
 
     }
 
