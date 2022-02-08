@@ -6,24 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <com.ibrahim.adam_task.view.custom.CustomTextView
-        style="@style/Widget.Theme.Adamai.MyView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:paddingLeft="20dp"
-        android:paddingBottom="40dp"
-        app:textDimension="24sp"
-        app:textDrawable="@android:drawable/ic_menu_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawableMargin="12dp"
+        app:textDimension="14dp"
+        app:textDrawable="@drawable/ic_bage"
         app:textString="Hello, CustomTextView" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

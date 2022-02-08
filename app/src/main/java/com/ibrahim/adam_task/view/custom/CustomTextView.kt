@@ -8,13 +8,21 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import com.ibrahim.adam_task.R
+import android.util.DisplayMetrics
+
+
+
 
 
 class CustomTextView : LinearLayout {
 
     var textDrawable: Drawable? = null
+    val textView by lazy { findViewById<TextView>(R.id.textView) }
+    val ivDrawable by lazy { findViewById<ImageView>(R.id.ivDrawable) }
 
     var textString: String? = ""
         set(value) {
@@ -28,7 +36,13 @@ class CustomTextView : LinearLayout {
             invalidateTextPaintAndMeasurements()
         }
 
-    var textDimension: Float = 16f
+    var textDimension = 16f
+        set(value) {
+            field = value
+            invalidateTextPaintAndMeasurements()
+        }
+
+    var drawableMargin: Float = 0f
         set(value) {
             field = value
             invalidateTextPaintAndMeasurements()
@@ -69,10 +83,14 @@ class CustomTextView : LinearLayout {
             textColor
         )
 
-        textDimension = a.getDimension(
-            R.styleable.CustomTextView_textDimension,
-            textDimension
-        )
+        textDimension =
+            if (a.hasValue(R.styleable.CustomTextView_textDimension)) {
+                convertPixelsToDp(a.getDimensionPixelSize(R.styleable.CustomTextView_textDimension, textDimension.toInt()), context)
+            }else{
+                16f
+            }
+
+        drawableMargin = a.getDimension(R.styleable.CustomTextView_drawableMargin, drawableMargin)
 
         if (a.hasValue(R.styleable.CustomTextView_textDrawable)) {
             textDrawable = a.getDrawable(
@@ -85,10 +103,20 @@ class CustomTextView : LinearLayout {
 
         Log.d("TAG", "init: $textDimension $textColor $textString $textDrawable")
 
+        ivDrawable.setImageDrawable(textDrawable)
+        textView.text = textString
+        textView.textSize = textDimension
+        ivDrawable.layoutParams = (ivDrawable.layoutParams as MarginLayoutParams).apply {
+            marginEnd = drawableMargin.toInt()
+        }
     }
 
 
     private fun invalidateTextPaintAndMeasurements() {
 
     }
+}
+
+fun convertPixelsToDp(px: Int, context: Context): Float {
+    return px / (context.resources.displayMetrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
 }
