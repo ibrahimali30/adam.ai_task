@@ -27,12 +27,12 @@ class MainActivity : AppCompatActivity() {
         recyclerView.apply {
             layoutManager = GridLayoutManager(this@MainActivity, 2)
             adapter = Adapter(listOf<Item>(
-                Item(R.drawable.ic_1,"Attendees",14,"#3380BEF2"),
-                Item(R.drawable.ic_2,"Agenda",10,"#33FFB434"),
-                Item(R.drawable.ic_3,"Preparation",5,"#331FCC79"),
+                Item(R.drawable.ic_6,"Attendees",14,"#3380BEF2"),
+                Item(R.drawable.ic_3,"Agenda",10,"#33FFB434"),
+                Item(R.drawable.ic_5,"Preparation",5,"#331FCC79"),
                 Item(R.drawable.ic_4,"Files",2,"#337534FF"),
-                Item(R.drawable.ic_5,"Discussion",12,"#33FF8282"),
-                Item(R.drawable.ic_6,"Activity",1,"#33C00FC3")
+                Item(R.drawable.ic_2,"Discussion",12,"#33FF8282"),
+                Item(R.drawable.ic_1,"Activity",1,"#33C00FC3")
             ))
             val itemDecorator = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
             ContextCompat.getDrawable(context, R.drawable.divider)?.let {
@@ -55,7 +55,10 @@ class Adapter(val itemsList: List<Item>): RecyclerView.Adapter<Adapter.ItemViewH
 
     class ItemViewHolder(val view: View): RecyclerView.ViewHolder(view) {
         fun bind(item: Item) {
-         view.itemContainer.setBackgroundColor(Color.parseColor(item.hexaColor))
+            view.itemContainer.setBackgroundColor(Color.parseColor(item.hexaColor))
+            view.ivIcon.setImageResource(item.iconRes)
+            view.tvTitle.text = item.title
+            view.tvCount.text = "(${item.count})"
         }
     }
 

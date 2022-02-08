@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     app:cardCornerRadius="8dp"
     android:layout_marginHorizontal="8dp"
+    tools:layout_marginTop="16dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -16,12 +17,14 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/ivIcon"
             android:layout_width="16dp"
             android:layout_height="16dp"
             android:src="@drawable/ic_1"/>
 
         <TextView
             android:id="@+id/tvTitle"
+            android:fontFamily="@font/inter_500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -31,8 +34,8 @@
             android:id="@+id/tvCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textSize=""
+            android:layout_marginStart="6dp"
+            android:textSize="12sp"
             android:text="(14)"/>
 
 
