@@ -8,6 +8,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
+        android:id="@+id/itemContainer"
         android:gravity="center"
         android:background="#3380BEF2"
         android:paddingVertical="18dp"
@@ -20,15 +21,18 @@
             android:src="@drawable/ic_1"/>
 
         <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="Attendees"/>
 
         <TextView
+            android:id="@+id/tvCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:textSize=""
             android:text="(14)"/>
 
 
