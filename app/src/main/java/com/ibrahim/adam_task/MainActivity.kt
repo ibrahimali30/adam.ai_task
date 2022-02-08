@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import androidx.recyclerview.widget.DividerItemDecoration
 
 import androidx.core.content.ContextCompat
+import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.item.view.*
 
 
@@ -21,6 +23,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         initRecyclerView()
+//        initTabLayoutView()
+    }
+
+    private fun initTabLayoutView() {
+        viewPager.adapter = Adapter(listOf<Item>(
+            Item(R.drawable.ic_6,"Attendees",14,"#3380BEF2"),
+            Item(R.drawable.ic_3,"Agenda",10,"#33FFB434")
+        ))
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            when (position) {
+                0 -> {
+                    tab.setCustomView(R.layout.layout_custom_item)
+                    tab.customView?.findViewById<TextView>(R.id.tvTabTitle)?.text = "Decisions  (2)"
+                }
+                1 -> {
+                    tab.setCustomView(R.layout.layout_custom_item)
+                    tab.customView?.findViewById<TextView>(R.id.tvTabTitle)?.text = "Actions  (2)"
+                }
+            }
+        }.attach()
     }
 
     private fun initRecyclerView() {
